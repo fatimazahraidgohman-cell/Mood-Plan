@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Espace Équilibre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌿 Mon Espace Équilibre</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="plan.html">Planning</a>
+                <a href="humeur.html">Humeur</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Bienvenue dans ton espace de sérénité</h2>
+                <p>Un lieu où l'organisation rencontre le bien-être</p>
+                <div class="motivation-quote">
+                    <p>"Chaque petit pas compte dans ton voyage"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>Planning Flexible</h3>
+                <p>Organise ta semaine avec bienveillance et adaptabilité</p>
+                <a href="plan.html" class="btn">Commencer</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌼</div>
+                <h3>Journal d'Humeur</h3>
+                <p>Exprime tes émotions et reçois du soutien personnalisé</p>
+                <a href="humeur.html" class="btn">S'exprimer</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💫</div>
+                <h3>Progression</h3>
+                <p>Suis tes accomplissements et célèbre tes victoires</p>
+                <a href="plan.html" class="btn">Voir progrès</a>
+            </div>
+        </section>
+
+        <section class="daily-motivation">
+            <h3>Petite pensée du jour</h3>
+            <div class="motivation-card">
+                <p id="daily-quote">"Tu es capable de plus que tu ne l'imagines"</p>
+                <button onclick="newQuote()" class="btn-outline">Nouvelle inspiration</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>✨ Créé avec tendresse pour ton équilibre quotidien</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
