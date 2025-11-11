@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal d'Humeur - Mon Espace Équilibre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌿 Mon Espace Équilibre</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="plan.html">Planning</a>
+                <a href="humeur.html">Humeur</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>🌼 Journal de mes Émotions</h2>
+            <p>Un espace sûr pour exprimer tes sentiments et recevoir du soutien</p>
+        </section>
+
+        <section class="mood-tracker">
+            <h3>Comment te sens-tu aujourd'hui ?</h3>
+            <div class="mood-options">
+                <div class="mood-option" data-mood="heureux" onclick="selectMood(this)">
+                    <span>😊</span>
+                    <p>Heureux(se)</p>
+                </div>
+                <div class="mood-option" data-mood="triste" onclick="selectMood(this)">
+                    <span>😔</span>
+                    <p>Triste</p>
+                </div>
+                <div class="mood-option" data-mood="energique" onclick="selectMood(this)">
+                    <span>💪</span>
+                    <p>Énergique</p>
+                </div>
+                <div class="mood-option" data-mood="calme" onclick="selectMood(this)">
+                    <span>😌</span>
+                    <p>Calme</p>
+                </div>
+                <div class="mood-option" data-mood="anxieux" onclick="selectMood(this)">
+                    <span>😰</span>
+                    <p>Anxieux(se)</p>
+                </div>
+                <div class="mood-option" data-mood="fier" onclick="selectMood(this)">
+                    <span>🌟</span>
+                    <p>Fier(ère)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="journal-entry">
+            <h3>📖 Exprime ce que tu ressens</h3>
+            <textarea id="journal-text" placeholder="Parle de ta journée, de tes préoccupations, de tes joies... Cet espace est juste pour toi." class="journal-input"></textarea>
+            
+            <div class="prompt-section">
+                <h4>Besoin d'inspiration ?</h4>
+                <p id="journal-prompt">"Qu'est-ce qui t'a fait sourire aujourd'hui ?"</p>
+                <button onclick="newPrompt()" class="btn-outline">Nouvelle question</button>
+            </div>
+
+            <button onclick="saveJournalEntry()" class="btn">Sauvegarder mon entrée</button>
+        </section>
+
+        <section class="support-section">
+            <h3>💝 Message de soutien personnalisé</h3>
+            <div class="support-message" id="support-message">
+                <p>Prends soin de toi aujourd'hui. Tu mérites de la gentillesse et du repos.</p>
+            </div>
+        </section>
+
+        <section class="previous-entries">
+            <h3>📚 Mes entrées précédentes</h3>
+            <div id="entries-container" class="entries-container">
+                <!-- Les entrées précédentes apparaîtront ici -->
+            </div>
+        </section>
+
+        <div class="back-link">
+            <a href="index.html" class="btn">← Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>✨ Créé avec tendresse pour ton équilibre quotidien</p>
+        </div>
+    </footer>
+
+    <script src="humeur.js"></script>
+</body>
+</html>
