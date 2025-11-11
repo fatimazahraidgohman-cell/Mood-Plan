@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning Flexible - Mon Espace Équilibre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🌿 Mon Espace Équilibre</h1>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="plan.html">Planning</a>
+                <a href="humeur.html">Humeur</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>📅 Mon Planning Personnalisé</h2>
+            <p>Organise ta semaine avec bienveillance et flexibilité</p>
+        </section>
+
+        <section class="progress-section">
+            <h3>Progression de la semaine: <span id="progress-percentage">0%</span></h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="progress-message" id="progress-message">Chaque petite étape compte 🌱</p>
+        </section>
+
+        <section class="add-task-section">
+            <h3>➕ Ajouter une nouvelle tâche</h3>
+            <div class="add-task-form">
+                <input type="text" id="new-task-input" placeholder="Quelle tâche veux-tu ajouter ?" class="task-input">
+                <select id="task-day-select" class="day-select">
+                    <option value="Lundi">Lundi</option>
+                    <option value="Mardi">Mardi</option>
+                    <option value="Mercredi">Mercredi</option>
+                    <option value="Jeudi">Jeudi</option>
+                    <option value="Vendredi">Vendredi</option>
+                    <option value="Samedi">Samedi</option>
+                    <option value="Dimanche">Dimanche</option>
+                </select>
+                <button onclick="addNewTask()" class="btn">Ajouter</button>
+            </div>
+        </section>
+
+        <table class="weekly-plan">
+            <thead>
+                <tr>
+                    <th>Jour</th>
+                    <th>Tâches</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tasks-container">
+                <tr>
+                    <td>Lundi</td>
+                    <td class="task-content">Révision cours Mathématiques</td>
+                    <td><span class="status pending">En cours</span></td>
+                    <td>
+                        <button class="btn-small" onclick="toggleTask(this)">Terminer</button>
+                        <button class="btn-small delete-btn" onclick="deleteTask(this)">🗑</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mardi</td>
+                    <td class="task-content">Projet programmation</td>
+                    <td><span class="status pending">En cours</span></td>
+                    <td>
+                        <button class="btn-small" onclick="toggleTask(this)">Terminer</button>
+                        <button class="btn-small delete-btn" onclick="deleteTask(this)">🗑</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section class="weekly-reflection">
+            <h3>🌼 Réflexion de la semaine</h3>
+            <textarea id="reflection-text" placeholder="Comment te sens-tu par rapport à cette semaine ? Qu'as-tu appris ?..." class="reflection-input"></textarea>
+            <button onclick="saveReflection()" class="btn">Sauvegarder mes réflexions</button>
+        </section>
+
+        <div class="back-link">
+            <a href="index.html" class="btn">← Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>✨ Créé avec tendresse pour ton équilibre quotidien</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
