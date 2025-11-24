@@ -3,70 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Espace Équilibre</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mood & Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #f0f8ff 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        .heart-arrow {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #ff6b8b;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            color: #7f8c8d;
+            margin-bottom: 60px;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        .options-container {
+            display: flex;
+            gap: 80px;
+            margin-top: 40px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            min-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .option-title {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .option-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #5d6d7e;
+            font-weight: 300;
+        }
+
+        /* تأثيرات خاصة لكل خيار */
+        .mood-option:hover .option-title {
+            color: #e74c3c;
+        }
+
+        .plan-option:hover .option-title {
+            color: #3498db;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .options-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .main-title {
+                font-size: 36px;
+            }
+            
+            .option {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>🌿 Mon Espace Équilibre</h1>
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="plan.html">Planning</a>
-                <a href="humeur.html">Humeur</a>
-            </nav>
-        </div>
-    </header>
+    <!-- السهم القلب في الأعلى -->
+    <div class="heart-arrow">💘</div>
 
-    <main class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Bienvenue dans ton espace de sérénité</h2>
-                <p>Un lieu où l'organisation rencontre le bien-être</p>
-                <div class="motivation-quote">
-                    <p>"Chaque petit pas compte dans ton voyage"</p>
-                </div>
-            </div>
-        </section>
+    <!-- العنوان الرئيسي -->
+    <h1 class="main-title">MOOD & PLAN</h1>
+    <p class="subtitle">Your Mood • Your Day</p>
 
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">📅</div>
-                <h3>Planning Flexible</h3>
-                <p>Organise ta semaine avec bienveillance et adaptabilité</p>
-                <a href="plan.html" class="btn">Commencer</a>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🌼</div>
-                <h3>Journal d'Humeur</h3>
-                <p>Exprime tes émotions et reçois du soutien personnalisé</p>
-                <a href="humeur.html" class="btn">S'exprimer</a>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💫</div>
-                <h3>Progression</h3>
-                <p>Suis tes accomplissements et célèbre tes victoires</p>
-                <a href="plan.html" class="btn">Voir progrès</a>
-            </div>
-        </section>
+    <!-- خيارات الدخول -->
+    <div class="options-container">
+        <!-- خيار MOOD -->
+        <a href="humeur.html" class="option mood-option">
+            <h2 class="option-title">MOOD</h2>
+            <p class="option-description">
+                Take a moment to feel your emotions, reflect on your thoughts, and plan your day with calm and clarity.
+            </p>
+        </a>
 
-        <section class="daily-motivation">
-            <h3>Petite pensée du jour</h3>
-            <div class="motivation-card">
-                <p id="daily-quote">"Tu es capable de plus que tu ne l'imagines"</p>
-                <button onclick="newQuote()" class="btn-outline">Nouvelle inspiration</button>
-            </div>
-        </section>
-    </main>
+        <!-- خيار PLAN -->
+        <a href="plan.html" class="option plan-option">
+            <h2 class="option-title">PLAN</h2>
+            <p class="option-description">
+                There Take a moment to organize your tasks, reflect on your goals, and plan your day with intention and clarity.
+            </p>
+        </a>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>✨ Créé avec tendresse pour ton équilibre quotidien</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('💘 Mood & Plan - Page d\'accueil élégante chargée');
+        });
+    </script>
 </body>
 </html>
